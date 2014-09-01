@@ -4,23 +4,23 @@ cmdman: Simple command line program wrapper adding debugging arguments.
 Introduction
 ------------
 
-This program provides a simple wrapper arround argparse to manage debugging of
-applications easily. Here is was it does:
+This library provides a simple wrapper around argparse to manage debugging of
+applications easily. Here is what it does:
 
- - On creation of a `cmdman` instance, it initializes a new argparse parser
-   accessible through `obj.parser`.
+ - On creation of a `cmdman` instance, it initializes a new argparse argument
+   parser accessible through `obj.parser`.
  - You can then call the `parse` function with the `args` parameter to parse
    your command line arguments. If no `args` is provided, `cmdman` simply uses
    `sys.argv` as the source. This function returns the "return code" advised by
    the feature called.
 
-Now you have there are two possibilities: if you set up subparsers using the
+Now there are two possibilities: if you set up subparsers using the
 `add_subparser` function, it will automatically call the associated function,
 otherwise it will call the `default_func` provided in the init (default prints
 help and returns 1).
 
 If any of these functions raises a instance of a (sub)class of
-`CMDMAN_CMDError`, this will be concider as a "command error" that should be
+`CMDMAN_CMDError`, this will be concidered as a "command error" that should be
 displayed properly to the user of your program. By default, it wraps the text
 of the error on 70 columns, and prepends it with "ERROR: ". So for instance, if
 your program does this:
@@ -42,12 +42,13 @@ But even more useful, if you can reproduce the bug, is the `--pdb` option that
 allows you to debug from the point where the exception was raised.
 
 To summarize, this small library provides a simple way to write command line
-tools displaying user friendly errors without preventing you to debug/have your
-users help you understand why they hit an error.
+tools displaying user friendly errors without preventing you from
+debugging/having your users help you understand why they hit an error.
 
 Full documentation of the API comming soon. Meanwhile, the code is less than
-100 lines and commented, so you should probably go check it out to see what
-options are available. Also, read the tests for example of usages.
+150 lines and commented, so you should probably go check it out to see what
+options are available. Also, read the tests and contents of `examples`
+directory for example of usages.
 
 How to install
 --------------
