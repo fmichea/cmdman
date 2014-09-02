@@ -20,7 +20,7 @@ otherwise it will call the `default_func` provided in the init (default prints
 help and returns 1).
 
 If any of these functions raises a instance of a (sub)class of
-`CMDMAN_CMDError`, this will be concidered as a "command error" that should be
+`CMDMAN_CMDError`, this will be considered a "command error" that should be
 displayed properly to the user of your program. By default, it wraps the text
 of the error on 70 columns, and prepends it with "ERROR: ". So for instance, if
 your program does this:
@@ -31,12 +31,13 @@ your program does this:
         # [...]
 
 Then cmdman will display this error properly. Now the interesting part is that
-you don't always want to hide the fact that this error was an exception in
-reality. This is what `cmdman` is for. It adds two options to the argument
-parser, `--backtrace` and `--pdb`.
+you don't always want to hide the fact that this error was an exception. This
+is what `cmdman` is for. It adds two options to the argument parser,
+`--backtrace` and `--pdb`.
 
-The first one displays the backtrace of the actual exception, so you can ask
-your users more information when they hit an error they should not.
+The first one displays the backtrace of the actual exception, so you can see
+the full path to the error which might help understand where that error comes
+from.
 
 But even more useful, if you can reproduce the bug, is the `--pdb` option that
 allows you to debug from the point where the exception was raised.
