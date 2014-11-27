@@ -11,11 +11,11 @@ setup(
     name='cmdman',
     description='Simple command line program wrapper adding debugging arguments.',
 
-    url='', # FIXME
+    url='https://github.com/fmichea/cmdman',
 
     # Version information.
     license='BSD',
-    version='0.0.1',
+    version='0.0.2',
 
     # Author information.
     author='Franck Michea',

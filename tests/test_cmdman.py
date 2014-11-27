@@ -117,4 +117,4 @@ def test_print_backtrace(monkeypatch, capsys):
     assert err == '>>> This is a backtrace displayed <<<\n'
     # Now we check we also get calls on pdb.
     assert c.parse(args=['--pdb']) == 1
-    assert (sum(pe_called), sum(pdb_count)) == (1, 1)
+    assert (sum(pe_called), sum(pdb_count)) == (2, 1)
