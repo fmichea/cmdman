@@ -85,7 +85,7 @@ class cmdman:
             # CMDMAN_CMDError, we don't want to print the stacktrace ourselves
             # unless we are asked to pdb, in which case the type of exception
             # does not matter.
-            if (args.backtrace or args.pdb) and isinstance(e, CMDMAN_CMDError):
+            if args.pdb or (args.backtrace and isinstance(e, CMDMAN_CMDError)):
                 traceback.print_exc()
             if args.pdb:  # Are we going to pdb that?
                 pdb.post_mortem(sys.exc_info()[2])
